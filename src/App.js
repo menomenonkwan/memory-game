@@ -14,7 +14,8 @@ function App() {
   const [score, setScore] = useState(0);
   const [data, setData] = useState(Flags);
   const [winner, setWinner] = useState(false);
-
+  const [gameOver, setGameOver] = useState(false);
+  
   const reshuffle = () => {
     setData(Shuffle(data));
   }
@@ -27,6 +28,7 @@ function App() {
     setPlayGame(play);
     setWinner(false);
     setScore(0);
+    setGameOver(false);
     data.forEach(flag => flag.clicked = false);
   }
 
@@ -50,6 +52,8 @@ function App() {
         setData={setData}
         winner={winner}
         setWinner={setWinner}
+        gameOver={gameOver}
+        setGameOver={setGameOver}
       />       
       }
       <Footer />

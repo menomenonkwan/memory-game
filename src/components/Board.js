@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Shuffle } from './assets/Utils';
 import Card from './Card';
 import GameOver from './GameOver';
 import Winner from './Winner';
 
-const Board = ({ score, setScore, checkHighScore, data, setData, winner, setWinner }) => {
-  const [gameOver, setGameOver] = useState(false);
+const Board = ({ score, setScore, checkHighScore, data, setData, winner, setWinner, gameOver, setGameOver }) => {
 
   useEffect(() => {    
     setData(Shuffle(data));
